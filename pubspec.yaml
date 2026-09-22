@@ -1,0 +1,26 @@
+name: salary_calculator
+description: "Salary Calculator Pro - A production-ready Flutter web salary calculator application."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.1.2
+  shared_preferences: ^2.2.3
+  intl: ^0.19.0
+  fl_chart: ^1.2.0
+  google_fonts: ^6.2.1
+  cupertino_icons: ^1.0.6
+  uuid: ^4.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
