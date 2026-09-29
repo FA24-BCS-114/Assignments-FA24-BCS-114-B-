@@ -82,6 +82,22 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   onTap: () => setState(() => _selectedIndex = 1),
                   child: _buildNavItem(Icons.calculate_outlined, 'Calculator', isSelected: _selectedIndex == 1),
                 ),
+                InkWell(
+                  onTap: () {},
+                  child: _buildNavItem(Icons.bar_chart, 'Results', isSelected: false),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: _buildNavItem(Icons.compare_arrows, 'Compare', isSelected: false),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: _buildNavItem(Icons.history, 'History', isSelected: false),
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: _buildNavItem(Icons.settings, 'Settings', isSelected: false),
+                ),
               ],
             ),
           ),
@@ -135,6 +151,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
               ),
             ),
+            const SizedBox(width: 16),
+            OutlinedButton.icon(
+              onPressed: () {},
+              icon: const Icon(Icons.compare_arrows, size: 18),
+              label: const Text('Compare Salary'),
+              style: OutlinedButton.styleFrom(
+                foregroundColor: Colors.white,
+                side: const BorderSide(color: Colors.white30),
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+            ),
           ],
         ),
         
@@ -149,45 +177,43 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
         ),
         const SizedBox(height: 20),
-        
         Row(
           children: [
-            Expanded(
-              child: InkWell(
-                onTap: () => setState(() => _selectedIndex = 1),
-                child: _buildActionCard(Icons.calculate_outlined, 'Calculate Salary'),
-              ),
-            ),
+            Expanded(child: _buildActionCard(Icons.calculate, 'Calculate Salary', () => setState(() => _selectedIndex = 1))),
             const SizedBox(width: 20),
-            Expanded(child: _buildActionCard(Icons.compare_arrows, 'Compare Offers (Pro)')),
+            Expanded(child: _buildActionCard(Icons.compare_arrows, 'Compare Offers', () {})),
+            const SizedBox(width: 20),
+            Expanded(child: _buildActionCard(Icons.history, 'View History', () {})),
+            const SizedBox(width: 20),
+            Expanded(child: _buildActionCard(Icons.settings, 'Settings', () {})),
           ],
         ),
       ],
     );
   }
 
-  Widget _buildNavItem(IconData icon, String title, {bool isSelected = false}) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+  Widget _buildActionCard(IconData icon, String title, VoidCallback onTap) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(16),
       child: Container(
+        height: 140,
+        padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xFF8B5CF6) : Colors.transparent,
-          borderRadius: BorderRadius.circular(30),
+          color: const Color(0xFF1E293B),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: Colors.white10),
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-        child: Row(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(
-              icon,
-              color: isSelected ? Colors.white : Colors.white60,
-              size: 22,
-            ),
-            const SizedBox(width: 16),
+            Icon(icon, color: const Color(0xFF8B5CF6), size: 28),
+            const Spacer(),
             Text(
               title,
-              style: TextStyle(
-                color: isSelected ? Colors.white : Colors.white60,
-                fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
                 fontSize: 15,
               ),
             ),
@@ -197,27 +223,23 @@ class _DashboardScreenState extends State<DashboardScreen> {
     );
   }
 
-  Widget _buildActionCard(IconData icon, String title) {
+  Widget _buildNavItem(IconData icon, String title, {bool isSelected = false}) {
     return Container(
-      padding: const EdgeInsets.all(24),
-      height: 140,
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: BoxDecoration(
-        color: const Color(0xFF1E293B),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.white10),
+        color: isSelected ? const Color(0xFF8B5CF6) : Colors.transparent,
+        borderRadius: BorderRadius.circular(12),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Row(
         children: [
-          Icon(icon, color: const Color(0xFF8B5CF6), size: 28),
-          const Spacer(),
+          Icon(icon, color: isSelected ? Colors.white : Colors.white60, size: 20),
+          const SizedBox(width: 16),
           Text(
             title,
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w500,
-              fontSize: 15,
+            style: TextStyle(
+              color: isSelected ? Colors.white : Colors.white60,
+              fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
             ),
           ),
         ],
@@ -415,4 +437,3 @@ class _CalculatorViewState extends State<CalculatorView> {
     );
   }
 }
-
