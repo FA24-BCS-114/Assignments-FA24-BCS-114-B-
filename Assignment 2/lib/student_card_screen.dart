@@ -7,22 +7,25 @@ class StudentCardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF121212), // Dark theme
-      body: Center(
-        child: Container(
-          width: 350,
-          decoration: BoxDecoration(
-            color: const Color(0xFF1E1E2C),
-            borderRadius: BorderRadius.circular(30),
-            border: Border.all(color: Colors.amber.withOpacity(0.3), width: 2),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.amber.withOpacity(0.15),
-                blurRadius: 40,
-                spreadRadius: 10,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 40.0),
+            child: Container(
+              width: 350,
+              decoration: BoxDecoration(
+                color: const Color(0xFF1E1E2C),
+                borderRadius: BorderRadius.circular(30),
+                border: Border.all(color: Colors.amber.withOpacity(0.3), width: 2),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.amber.withOpacity(0.15),
+                    blurRadius: 40,
+                    spreadRadius: 10,
+                  ),
+                ],
               ),
-            ],
-          ),
-          child: Column(
+              child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               // Header
@@ -76,7 +79,7 @@ class StudentCardScreen extends StatelessWidget {
               
               // Name & Reg
               const Text(
-                'Harry',
+                'Harry (114)',
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.w900,
