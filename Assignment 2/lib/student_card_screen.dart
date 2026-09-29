@@ -26,103 +26,105 @@ class StudentCardScreen extends StatelessWidget {
                 ],
               ),
               child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // Header
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                decoration: const BoxDecoration(
-                  color: Colors.amber,
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
-                ),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.school, color: Colors.black87, size: 28),
-                    SizedBox(width: 10),
-                    Text(
-                      'COMSATS',
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontSize: 22,
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: 2,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Header
+                  Container(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    decoration: const BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
+                    ),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.school, color: Colors.black87, size: 28),
+                        SizedBox(width: 10),
+                        Text(
+                          'COMSATS',
+                          style: TextStyle(
+                            color: Colors.black87,
+                            fontSize: 22,
+                            fontWeight: FontWeight.w900,
+                            letterSpacing: 2,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  
+                  const SizedBox(height: 30),
+                  
+                  // Profile
+                  Container(
+                    padding: const EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: Colors.amber,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(color: Colors.amber.withOpacity(0.5), blurRadius: 20),
+                      ],
+                    ),
+                    child: const CircleAvatar(
+                      radius: 55,
+                      backgroundColor: Color(0xFF1E1E2C),
+                      child: Text(
+                        'H',
+                        style: TextStyle(fontSize: 45, color: Colors.amber, fontWeight: FontWeight.bold),
                       ),
                     ),
-                  ],
-                ),
-              ),
-              
-              const SizedBox(height: 30),
-              
-              // Profile
-              Container(
-                padding: const EdgeInsets.all(4),
-                decoration: BoxDecoration(
-                  color: Colors.amber,
-                  shape: BoxShape.circle,
-                  boxShadow: [
-                    BoxShadow(color: Colors.amber.withOpacity(0.5), blurRadius: 20),
-                  ],
-                ),
-                child: const CircleAvatar(
-                  radius: 55,
-                  backgroundColor: Color(0xFF1E1E2C),
-                  child: Text(
-                    'H',
-                    style: TextStyle(fontSize: 45, color: Colors.amber, fontWeight: FontWeight.bold),
                   ),
-                ),
-              ),
-              
-              const SizedBox(height: 20),
-              
-              // Name & Reg
-              const Text(
-                'Harry (114)',
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.white,
-                  letterSpacing: 1.5,
-                ),
-              ),
-              const SizedBox(height: 8),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-                decoration: BoxDecoration(
-                  color: Colors.amber.withOpacity(0.15),
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: Colors.amber.withOpacity(0.5)),
-                ),
-                child: const Text(
-                  'FA24-BCS-114',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.amber,
+                  
+                  const SizedBox(height: 20),
+                  
+                  // Name & Reg
+                  const Text(
+                    'Harry (114)',
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      letterSpacing: 1.5,
+                    ),
                   ),
-                ),
+                  const SizedBox(height: 8),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Colors.amber.withOpacity(0.15),
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(color: Colors.amber.withOpacity(0.5)),
+                    ),
+                    child: const Text(
+                      'FA24-BCS-114',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.amber,
+                      ),
+                    ),
+                  ),
+                  
+                  const SizedBox(height: 30),
+                  
+                  // Info List
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 30),
+                    child: Column(
+                      children: [
+                        _buildInfo(Icons.computer, 'Computer Science'),
+                        const SizedBox(height: 15),
+                        _buildInfo(Icons.timeline, '1st Semester (FA24)'),
+                        const SizedBox(height: 15),
+                        _buildInfo(Icons.mail_outline, 'harry114@gmail.com'),
+                      ],
+                    ),
+                  ),
+                  
+                  const SizedBox(height: 40),
+                ],
               ),
-              
-              const SizedBox(height: 30),
-              
-              // Info List
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: Column(
-                  children: [
-                    _buildInfo(Icons.computer, 'Computer Science'),
-                    const SizedBox(height: 15),
-                    _buildInfo(Icons.timeline, '1st Semester (FA24)'),
-                    const SizedBox(height: 15),
-                    _buildInfo(Icons.mail_outline, 'harry114@gmail.com'),
-                  ],
-                ),
-              ),
-              
-              const SizedBox(height: 40),
-            ],
+            ),
           ),
         ),
       ),
