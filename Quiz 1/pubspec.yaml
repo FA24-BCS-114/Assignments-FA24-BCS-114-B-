@@ -1,0 +1,20 @@
+name: quiz1_basic_widgets_harry
+description: Quiz 1 Basic Flutter UI Widgets - Student Form (FA24-BCS-114).
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
