@@ -1,0 +1,40 @@
+name: pdf_reader_114
+description: "PDF Reader 114 - Modern Dark Cross-Platform PDF Reader & Utility Suite (FA24-BCS-114 Lab Mid)"
+publish_to: 'none'
+version: 1.4.0+114
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_riverpod: ^2.6.1
+  sqflite: ^2.4.1
+  path: ^1.9.0
+  path_provider: ^2.1.5
+  shared_preferences: ^2.5.3
+  pdfrx: ^1.0.101
+  pdf: ^3.11.3
+  syncfusion_flutter_pdf: ^29.1.38
+  printing: ^5.14.3
+  file_picker: ^11.0.3
+  image_picker: ^1.1.2
+  image: ^4.5.4
+  share_plus: ^12.0.2
+  permission_handler: ^12.0.3
+  url_launcher: ^6.3.1
+  intl: ^0.20.2
+  crypto: ^3.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  sqflite_common_ffi: ^2.3.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/
