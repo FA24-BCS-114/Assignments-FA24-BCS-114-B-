@@ -1,4 +1,4 @@
-# Miscellaneous
+﻿# Miscellaneous
 *.class
 *.log
 *.pyc
@@ -32,3 +32,8 @@ migrate_working_dir/
 **/lib/generated_plugin_registrant.dart
 app.*.symbols
 app.*.map.json
+**/android/.gradle/
+**/android/local.properties
+**/android/**/.cxx/
+**/android/captures/
+

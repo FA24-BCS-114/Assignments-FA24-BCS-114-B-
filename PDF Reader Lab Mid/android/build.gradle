@@ -9,6 +9,29 @@ rootProject.buildDir = "../build"
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
+subprojects { subproject ->
+    if (subproject.name != "app" && !subproject.hasProperty("flutter")) {
+        subproject.ext.set("flutter", [
+            compileSdkVersion: 36,
+            minSdkVersion: 21,
+            targetSdkVersion: 35,
+            ndkVersion: "26.1.10909125"
+        ])
+    }
+    def configureAndroid = { p ->
+        if (p.hasProperty("android")) {
+            p.android {
+                compileSdk = 36
+                ndkVersion = "26.1.10909125"
+            }
+        }
+    }
+    if (subproject.state.executed) {
+        configureAndroid(subproject)
+    } else {
+        subproject.afterEvaluate(configureAndroid)
+    }
+}
 subprojects {
     project.evaluationDependsOn(":app")
 }
